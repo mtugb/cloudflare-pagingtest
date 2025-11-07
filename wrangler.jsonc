@@ -1,0 +1,4 @@
+{
+    "name": "my-editor",
+    "pages_build_output_dir": "./dist" // 本番の配信フォルダを固定
+}
