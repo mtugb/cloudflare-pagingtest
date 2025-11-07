@@ -1,5 +1,8 @@
 {
-    "devDependencies":{"wrangler":"^4.46.0"},
+    "devDependencies": {
+        "vite": "^7.2.1",
+        "wrangler": "^4.46.0"
+    },
     "scripts": {
         "dev": "vite",
         "deploy": "vite build & wrangler pages deploy"
