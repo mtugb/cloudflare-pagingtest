@@ -1,4 +1,12 @@
 {
-    "name": "my-editor",
-    "pages_build_output_dir": "./dist" // 本番の配信フォルダを固定
+	"name": "my-editor",
+	"pages_build_output_dir": "./dist",
+	"d1_databases": [
+		{
+			"binding": "bucchinote_db",
+			"database_name": "bucchinote_db",
+			"database_id": "4ab5fe4e-3bfa-4ae4-bb53-6ea9742597e3",
+			"migrations_dir" : "drizzle"
+		}
+	] // 本番の配信フォルダを固定
 }

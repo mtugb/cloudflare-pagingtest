@@ -1,10 +1,26 @@
 {
     "devDependencies": {
+        "@types/node": "^24.10.0",
+        "drizzle-kit": "^0.31.6",
+        "npm-run-all": "^4.1.5",
+        "typescript": "^5.9.3",
         "vite": "^7.2.1",
         "wrangler": "^4.46.0"
     },
     "scripts": {
-        "dev": "vite",
-        "deploy": "vite build & wrangler pages deploy"
+        "dev": "run-p --print-label dev:wrangler dev:vite",
+        "dev:wrangler": "wrangler pages dev dist",
+        "dev:vite": "vite dev --open",
+        "deploy": "vite build && wrangler pages deploy --branch production",
+        "migrate:local": "drizzle-kit generate && wrangler d1 migrations apply bucchinote_db --local",
+        "migrate:remote": "drizzle-kit generate && wrangler d1 migrations apply bucchinote_db --remote"
+    },
+    "dependencies": {
+        "@aws-sdk/client-ses": "^3.927.0",
+        "@cloudflare/workers-types": "^4.20251109.0",
+        "bcryptjs": "^3.0.3",
+        "drizzle-orm": "^0.44.7",
+        "hono": "^4.10.4",
+        "zod": "^4.1.12"
     }
 }

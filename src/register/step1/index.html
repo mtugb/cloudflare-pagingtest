@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用者登録</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+    <style>
+        .form-container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="form-container">
+        <h1>新規利用登録</h1>
+        <form id="registerForm">
+            <fieldset>
+                <label>
+                    メールアドレス
+                    <input type="email" name="email" placeholder="Email" autocomplete="email" />
+                </label>
+            </fieldset>
+
+            <input type="submit" value="登録する" />
+        </form>
+    </main>
+    <script type="module" src="./main.ts"></script>
+</body>
+
+</html>

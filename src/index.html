@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BucchiNote | ぶっちぎりの効率でノートをとろう！</title>
+    <meta name="description"
+        content="BucchiNote は PCでノートを取る人のための高速・高機能ノートアプリ。数式を見たままで編集、タイピングで爆速入力、オンライン同期、図形描画にも対応予定。" />
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+    <style>
+        header .brand {
+            font-weight: 700;
+            letter-spacing: .2px;
+        }
+
+        .hero {
+            padding: 5rem 0 3rem;
+        }
+
+        .hero h1 {
+            line-height: 1.15;
+        }
+
+        .hero mark {
+            font-weight: 800;
+            font-size: 1.1em;
+        }
+
+        .features-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .feature-icon {
+            width: 2.2rem;
+            height: 2.2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid var(--muted-border-color);
+            margin-right: .6rem;
+        }
+
+        .muted {
+            color: var(--muted-color);
+        }
+
+        footer {
+            margin-top: 4rem;
+        }
+
+        .footer-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            flex-direction: column;
+        }
+
+        .footer-brand {
+            flex: 0 0 auto;
+        }
+
+        /* 右のリンクに押し潰されない */
+        .footer-links {
+            flex: 1 1 auto;
+        }
+
+        /* 残り幅で伸縮OK */
+        .footer-links {
+            display: flex;
+            justify-content: end;
+            flex-wrap: wrap;
+            gap: 1.2rem 2rem;
+        }
+
+        /* .footer-links ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        } */
+
+        .footer-links a {
+            white-space: nowrap;
+        }
+
+        header nav ul:last-of-type li:not(:nth-last-child(-n + 2)) {
+            display: none;
+        }
+
+        /* 文字幅でカラムが決まる */
+
+
+        @media (min-width: 700px) {
+            .hero {
+                padding: 6.5rem 0 4rem;
+            }
+
+            .footer-wrapper {
+                flex-direction: row;
+            }
+
+            header nav ul:last-of-type li:not(:nth-last-child(-n + 2)) {
+                display: inline-block;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="container">
+        <nav>
+            <ul>
+                <li><strong class="brand">BucchiNote</strong></li>
+            </ul>
+            <ul>
+                <li><a href="#about">BucchiNoteとは</a></li>
+                <li><a href="#request">機能追加の要望</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+                <li class="remain"><a href="/register" role="button">新規登録</a></li>
+                <li class="remain"><a href="/login" class="secondary" role="button">ログイン</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <main class="container hero">
+        <article>
+            <h1>
+                「ぶっちぎり」の効率でノートをとろう！
+            </h1>
+            <p class="muted">
+                BucchiNote は、PCでノートを取る人のための“速さ”と“書きやすさ”を両立したノートアプリです。
+                数式も図形も、あなたの学びに合わせて思い通りに。
+            </p>
+            <p>
+                <a href="/register" role="button">新規登録</a>
+                <a href="/login" class="secondary" role="button">ログイン</a>
+            </p>
+        </article>
+    </main>
+
+    <!-- Features -->
+    <section class="container">
+        <h2>主な特徴</h2>
+        <div class="grid features-grid">
+            <article>
+                <header>
+                    <span class="feature-icon">∑</span><strong>数式が見たままに編集</strong>
+                </header>
+                <p>
+                    TeX/記号入力に不慣れでもOK。入力と同時に“見たまま（WYSIWYG）”で数式を整形。
+                </p>
+            </article>
+            <article>
+                <header>
+                    <span class="feature-icon">⌨️</span><strong>タイピングで爆速入力</strong>
+                </header>
+                <p>
+                    手書きよりもずっと速い。ショートカット中心の設計で、思考の流れを止めません。
+                </p>
+            </article>
+            <article>
+                <header>
+                    <span class="feature-icon">☁️</span><strong>オンライン同期</strong>
+                </header>
+                <p>
+                    ノートは自動でクラウドに保存。スマホからも閲覧・確認できます。
+                </p>
+            </article>
+            <article>
+                <header>
+                    <span class="feature-icon">⬛</span><strong>図形描画にも対応予定</strong>
+                </header>
+                <p>
+                    PCノートの弱点だった図形描画も、基本図形や矢印などの簡易ツールで素早く表現（実装予定）。
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="container">
+        <h2>BucchiNoteとは</h2>
+        <p>
+            PCでノートを取る人のために設計された、軽快でミニマルなノートアプリです。
+            学習・研究・会議メモまで、キーボード主体で効率よく記録できます。
+        </p>
+    </section>
+
+    <!-- Request -->
+    <section id="request" class="container">
+        <h2>機能追加の要望</h2>
+        <p class="muted">
+            「こんな機能が欲しい」「ここを改善してほしい」などのリクエストは大歓迎です。
+        </p>
+        <form onsubmit="alert('ありがとうございます！近日中に確認します。'); return false;">
+            <label>
+                要望の内容
+                <textarea placeholder="例）積分記号まわりのショートカットの追加 など" required></textarea>
+            </label>
+            <label>
+                ご連絡先（任意）
+                <input type="email" placeholder="you@example.com" />
+            </label>
+            <button type="submit">送信する</button>
+        </form>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="container">
+        <h2>お問い合わせ</h2>
+        <p class="muted">不具合報告・ご相談はこちらから。</p>
+        <form onsubmit="alert('送信しました。ありがとうございます！'); return false;">
+            <div class="grid">
+                <label>お名前<input type="text" placeholder="山田 太郎" required /></label>
+                <label>メールアドレス<input type="email" placeholder="you@example.com" required /></label>
+            </div>
+            <label>内容<textarea placeholder="お問い合わせ内容を入力してください" required></textarea></label>
+            <button type="submit">送信</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container">
+        <hr />
+
+        <div class="footer-wrapper">
+            <strong class="footer-brand">BucchiNote</strong>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#about">BucchiNoteとは</a></li>
+                    <li><a href="#request">機能追加の要望</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/register">新規登録</a></li>
+                    <li><a href="/login">ログイン</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/terms">利用規約</a></li>
+                    <li><a href="/privacy">プライバシーポリシー</a></li>
+                </ul>
+            </div>
+        </div>
+        <small class="muted">© <span id="y"></span> BucchiNote</small>
+    </footer>
+
+    <script>
+        // 年号だけ自動更新（HTMLだけでも動く簡易スクリプト）
+        document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
