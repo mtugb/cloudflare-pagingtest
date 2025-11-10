@@ -31,4 +31,6 @@ api.post("/registerUserdata", registerUserdata);
 
 api.post("/login", login);
 
+api.get("/auth/check", login);
+
 export {api};
