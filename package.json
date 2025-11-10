@@ -9,8 +9,9 @@
     },
     "scripts": {
         "dev": "run-p --print-label dev:wrangler dev:vite",
-        "dev:wrangler": "wrangler pages dev dist",
+        "dev:wrangler": "wrangler pages dev",
         "dev:vite": "vite dev --open",
+        "dev:api": "vite build && wrangler pages dev",
         "deploy": "vite build && wrangler pages deploy --branch production",
         "migrate:local": "drizzle-kit generate && wrangler d1 migrations apply bucchinote_db --local",
         "migrate:remote": "drizzle-kit generate && wrangler d1 migrations apply bucchinote_db --remote"
