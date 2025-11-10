@@ -17,20 +17,19 @@
 
 <body>
     <main class="form-container">
-        <h1>新規利用登録</h1>
-        <form id="registerForm">
+        <h1>新規利用登録 (Step 3/3)</h1> <form id="registerForm">
             <fieldset>
                 <label>
                     名前
-                    <input name="first_name" placeholder="山田太郎" autocomplete="name" />
+                    <input name="first_name" placeholder="山田太郎" autocomplete="name" required />
                 </label>
                 <label>
                     パスワード
-                    <input type="password" name="password" placeholder="Email" autocomplete="email" />
+                    <input type="password" name="password" placeholder="8文字以上" autocomplete="new-password" required minlength="8" /> 
                 </label>
             </fieldset>
 
-            <input type="submit" value="登録する" />
+            <input type="submit" value="登録を完了する" />
         </form>
     </main>
     <script type="module" src="./main.ts"></script>

@@ -16,11 +16,14 @@
         "migrate:remote": "drizzle-kit generate && wrangler d1 migrations apply bucchinote_db --remote"
     },
     "dependencies": {
+        "1106": "link:",
         "@aws-sdk/client-ses": "^3.927.0",
         "@cloudflare/workers-types": "^4.20251109.0",
+        "aws4fetch": "^1.0.20",
         "bcryptjs": "^3.0.3",
         "drizzle-orm": "^0.44.7",
         "hono": "^4.10.4",
+        "nanoid": "^5.1.6",
         "zod": "^4.1.12"
     }
 }

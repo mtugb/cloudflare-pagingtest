@@ -8,14 +8,14 @@ export const schema = z.object({
 
 window.onload = () => {
     const form = document.getElementById("registerForm") as HTMLFormElement;
-    const errorArea = document.getElementById("error") as HTMLElement;
 
     form.onsubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(form);
+        const errorArea = document.getElementById("error") as HTMLElement;
 
         try {
-            const res = await fetch("/api/verifyEmail", {
+            const res = await fetch("/api/login", {
                 method: "POST",
                 body: formData,
             });
@@ -28,7 +28,7 @@ window.onload = () => {
             }
 
             // 成功なら次のステップへ
-            window.location.href = "/register/step3/index.html";
+            window.location.href = "/app/index.html";
         } catch (err) {
             // ZodErrorやfetch失敗時の処理
             console.error("登録エラー:", err);

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>利用者登録</title>
+    <title>ログイン</title>
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
     <style>
         .form-container {
@@ -20,16 +20,20 @@
 
 <body>
     <main class="form-container">
-        <h1>新規利用登録</h1>
+        <h1>ログイン</h1>
         <form id="registerForm">
             <fieldset>
                 <label>
-                    認証コード
-                    <input name="onetime_token" placeholder="0000" />
+                    メールアドレス
+                    <input type="email" name="email" placeholder="Email" autocomplete="email" />
+                </label>
+                <label>
+                    パスワード
+                    <input type="password" name="password" placeholder="Password" autocomplete="current-password" />
                 </label>
             </fieldset>
 
-            <input type="submit" value="登録する" />
+            <input type="submit" value="ログインする" />
             <span id="error"></span>
         </form>
     </main>

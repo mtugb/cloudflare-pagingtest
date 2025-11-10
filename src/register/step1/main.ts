@@ -12,6 +12,7 @@ window.onload = () => {
     form.onsubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(form);
+        const errorArea = document.getElementById("error") as HTMLElement;
 
         try {
             const res = await fetch("/api/registerEmail", {
@@ -21,6 +22,10 @@ window.onload = () => {
 
             const data = await res.json();
             const parsed = schema.parse(data); // Zodでバリデーション
+            if (!parsed.ok) {
+                errorArea.textContent = parsed.error ?? '';
+                return;
+            }
 
             // 成功なら次のステップへ
             window.location.href = "/register/step2/index.html";

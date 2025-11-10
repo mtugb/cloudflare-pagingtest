@@ -14,7 +14,8 @@ window.onload = () => {
         const formData = new FormData(form);
 
         try {
-            const res = await fetch("/api/register", {
+            // 🌟 修正: APIエンドポイントを /api/registerUserdata に修正
+            const res = await fetch("/api/registerUserdata", {
                 method: "POST",
                 body: formData,
             });
@@ -22,12 +23,18 @@ window.onload = () => {
             const data = await res.json();
             const parsed = schema.parse(data); // Zodでバリデーション
 
-            // 成功なら次のステップへ
-            window.location.href = "/register/step2/index.html";
+            if (parsed.ok) {
+                 // 成功なら次のステップへ (登録完了画面)
+                window.location.href = "/register/complete/index.html";
+            } else {
+                // 🌟 追加: エラー表示
+                console.error("登録エラー:", parsed.error || "登録に失敗しました");
+                alert(parsed.error || "登録に失敗しました"); 
+            }
         } catch (err) {
             // ZodErrorやfetch失敗時の処理
-            console.error("登録エラー:", err);
+            console.error("通信エラー:", err);
+            alert("通信エラーが発生しました。");
         }
     };
-
 }
